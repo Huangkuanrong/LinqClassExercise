@@ -10,30 +10,15 @@ namespace LinqClassExercise002
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Split Odd and Even Number Program (Ex:1,2,3,4)\n-------");
+            Console.Write("Input numbers : ");
             List<string> input = Console.ReadLine().Split(',').ToList();
             List<int> list = input.Select(x => int.Parse(x)).ToList();
             List<int> oddNumber = list.Where(x => x%2!=0).OrderBy(y => y).ToList();
             List<int> evenNumber = list.Where(x => x%2==0).OrderBy(y => y).ToList();
-            Display(oddNumber);
-            Display(evenNumber);
+            Console.WriteLine($"\"Odd Number : \"{string.Join(",", oddNumber)}");
+            Console.WriteLine($"\"Even Number : \"{string.Join(",", evenNumber)}");
             Console.ReadLine();
-        }
-
-        static void Display(List<int> output)
-        {
-            foreach (var item in output)
-            {
-                Console.Write(item);
-                if (output.IndexOf(item) < output.Count() - 1)
-                {
-                    Console.Write(",");
-                }
-                else
-                {
-                    Console.WriteLine();
-                }
-
-            }
         }
     }
 }

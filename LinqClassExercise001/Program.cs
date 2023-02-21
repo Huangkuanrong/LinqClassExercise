@@ -10,28 +10,12 @@ namespace LinqClassExercise001
     {
         static void Main(string[] args)
         {
-            List<string> input = Console.ReadLine().Split(',').ToList();
-            List<int> list = input.Select(x => int.Parse(x)).ToList();
-            var output = list.OrderByDescending(x => x).ToList();
-            Display(output);
+            Console.WriteLine("Reverse Number Program (Ex:1,2,3,4)\n-------");
+            Console.Write("Input numbers : ");
+            string[] input = Console.ReadLine().Split(',');
+            var output = input.Reverse();
+            Console.WriteLine(string.Join(",", output));
             Console.ReadLine();
-        }
-
-        static void Display(List<int> output)
-        {
-            foreach (var item in output)
-            {
-                Console.Write(item);
-                if (output.IndexOf(item) < output.Count() - 1)
-                {
-                    Console.Write(",");
-                }
-                else
-                {
-                    Console.WriteLine();
-                }
-
-            }
         }
     }
 }
