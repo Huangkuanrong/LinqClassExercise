@@ -16,6 +16,7 @@ namespace LinqClassExercise002
             List<int> evenNumber = list.Where(x => x%2==0).OrderBy(y => y).ToList();
             Display(oddNumber);
             Display(evenNumber);
+            Console.ReadLine();
         }
 
         static void Display(List<int> output)
